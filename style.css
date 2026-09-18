@@ -1,0 +1,368 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#add-expense {
+    background-color: lightblue;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.expenses {
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header & Logo */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Section Card Layout */
+section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
+}
+
+/* ----------------------------------------------------
+   REQUIREMENT 5: ADVANCED CSS SELECTORS
+   ---------------------------------------------------- */
+
+/* Selector 1: Descendant Selector (.expenses-section td) */
+.expenses-section td {
+  padding: 12px 15px;
+  font-size: 0.95rem;
+}
+
+/* Selector 2: Focus state selector (input:focus, select:focus) */
+input:focus, select:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+}
+
+/* Selector 3: Negation pseudo-class (input:not([type="button"])) */
+input:not([type="button"]) {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Selector 4: Position Pseudo-classes (tr:nth-child(even)) */
+.expense-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* ----------------------------------------------------
+   FORM STYLES & INTERACTIVE BUTTON
+   ---------------------------------------------------- */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.add-expense-section > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Requirement 4: Button cursor pointer */
+button[type="button"] {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+button[type="button"]:hover {
+  background-color: #219150;
+}
+
+/* ----------------------------------------------------
+   REQUIREMENT 1 & 4: TABLE STYLES & HOVER STATE
+   ---------------------------------------------------- */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse; /* Requirement 1 */
+  text-align: left;
+}
+
+.expense-table thead tr {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.expense-table th {
+  padding: 12px 15px;
+}
+
+.expense-table border, .expense-table td, .expense-table th {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Requirement 4: Table row hover state */
+.expense-table tbody tr:hover {
+  background-color: #eaf2f8;
+  transition: background-color 0.2s ease;
+}
+
+/* Collapsible Details Styling */
+details {
+  background-color: #eef7f2;
+  border: 1px solid #c8e6c9;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+summary {
+  font-weight: bold;
+  color: #1b5e20;
+  cursor: pointer;
+}
+
+details p {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Video Responsive Container */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   1. GOOGLE FONTS & VARIABLES (Color Palette & Typography)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --primary-color: #4f46e5;       /* Indigo primary accent */
+  --primary-hover: #4338ca;       /* Darker indigo for hover states */
+  --bg-color: #f3f4f6;            /* Light gray page background */
+  --card-bg: #ffffff;             /* Pure white card backgrounds */
+  --text-dark: #1f2937;           /* Main heading and body text color */
+  --text-muted: #6b7280;          /* Labels and secondary text color */
+  --border-color: #e5e7eb;        /* Soft borders */
+  --table-alt-row: #f9fafb;       /* Alternating row color */
+  
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Box Model Properties */
+  --radius-lg: 12px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Base Body Styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+/* Layout Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHY & CARD CARRIER (CSS Box Model & Cards)
+   ========================================================================== */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  margin-top: 0;
+}
+
+/* Applied Box Model to create distinct visual "cards" */
+header, 
+form, 
+.table-container,
+section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   3. FORM STYLING
+   ========================================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+input, select {
+  font-family: var(--font-body);
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Button Styling */
+button, .btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   4. EXPENSE TABLE STYLING
+   ========================================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Styled Table Header */
+th {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Alternating Row Colors */
+tbody tr:nth-child(even) {
+  background-color: var(--table-alt-row);
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Remove bottom border from last row */
+tbody tr:last-child td {
+  border-bottom: none;
+}
